@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Brand Name] - Luxury & Modern Cosmetics</title>
+  <meta name="description" content="Discover clean, organic, and dermatologically tested beauty products by [Your Brand Name]. High-performance skincare, cosmetics, and fragrances.">
+
+  <!-- Google Fonts: Playfair Display for luxury titles & Plus Jakarta Sans for ultra-modern body -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container announcement-inner">
+      <div class="announcement-text">
+        <span class="sparkle-icon">✨</span>
+        <span>Special Offer: Use code <strong>[GLOW20]</strong> for 20% OFF | Free Shipping on orders above <strong>[₹999 / $49]</strong></span>
+      </div>
+      <div class="announcement-extras">
+        <div class="currency-selector">
+          <span class="currency-label">Currency:</span>
+          <button id="currency-toggle" class="currency-btn" title="Toggle Currency">₹ INR / $ USD</button>
+        </div>
+        <span class="store-badge">🌿 100% Cruelty Free</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Placeholder Customization Notice Banner (Dismissible) -->
+  <div class="placeholder-guide-bar" id="placeholder-notice">
+    <div class="container guide-inner">
+      <span class="guide-tag">💡 Quick Setup Guide:</span>
+      <p>All items in <code>[Bracketed Placeholders]</code> (like <em>[Your Brand Name]</em>, <em>[Product Names]</em>, and <em>[Contact Details]</em>) can be customized with your actual store details.</p>
+      <button class="close-guide-btn" id="close-guide" aria-label="Dismiss guide">✕</button>
+    </div>
+  </div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header" id="header">
+    <div class="container nav-wrapper">
+      
+      <!-- Mobile Hamburger Button -->
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open mobile menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Brand Logo / Placeholder -->
+      <a href="#" class="brand-logo">
+        <span class="logo-symbol">✧</span>
+        <div class="logo-text-group">
+          <span class="logo-main">[YOUR BRAND]</span>
+          <span class="logo-sub">L U X U R Y &nbsp; C O S M E T I C S</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#categories" class="nav-link">Categories</a></li>
+          <li><a href="#bestsellers" class="nav-link">Best Sellers</a></li>
+          <li><a href="#routine-quiz" class="nav-link highlight-pill">Skin Quiz ✨</a></li>
+          <li><a href="#ingredients" class="nav-link">Ingredients</a></li>
+          <li><a href="#reviews" class="nav-link">Reviews</a></li>
+          <li><a href="#about" class="nav-link">About Us</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Header Action Icons -->
+      <div class="header-actions">
+        <button class="action-btn" id="search-toggle-btn" aria-label="Search products" title="Search">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
+
+        <button class="action-btn" id="wishlist-toggle-btn" aria-label="Wishlist items" title="Wishlist">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge" id="wishlist-badge">0</span>
+        </button>
+
+        <button class="action-btn cart-btn" id="cart-toggle-btn" aria-label="Open Shopping Cart" title="Cart">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="badge" id="cart-badge">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <aside class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="logo-text-group">
+        <span class="logo-main">[YOUR BRAND]</span>
+        <span class="logo-sub">L U X U R Y &nbsp; C O S M E T I C S</span>
+      </div>
+      <button class="close-drawer-btn" id="close-drawer-btn" aria-label="Close mobile menu">✕</button>
+    </div>
+    <div class="drawer-body">
+      <div class="mobile-search-box">
+        <input type="text" id="mobile-search-input" placeholder="Search cosmetics, lipstick, serums..." />
+        <button id="mobile-search-btn" aria-label="Search">🔍</button>
+      </div>
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-link"><span>🏠 Home</span></a></li>
+        <li><a href="#categories" class="mobile-link"><span>💄 Categories</span></a></li>
+        <li><a href="#bestsellers" class="mobile-link"><span>🌟 Best Sellers</span></a></li>
+        <li><a href="#routine-quiz" class="mobile-link"><span>✨ Skin Routine Quiz</span> <span class="tag-badge">Popular</span></a></li>
+        <li><a href="#ingredients" class="mobile-link"><span>🌿 Pure Ingredients</span></a></li>
+        <li><a href="#reviews" class="mobile-link"><span>💬 Customer Reviews</span></a></li>
+        <li><a href="#about" class="mobile-link"><span>📖 About [Brand]</span></a></li>
+        <li><a href="#contact" class="mobile-link"><span>📍 Store & Contact</span></a></li>
+      </ul>
+      <div class="drawer-footer">
+        <div class="drawer-contact-info">
+          <p>📞 <strong>[+91 98765 43210]</strong></p>
+          <p>✉️ <strong>[support@yourshop.com]</strong></p>
+          <p>📍 <strong>[123 Beauty Boulevard, City]</strong></p>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+
+  <!-- Global Search Overlay -->
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-modal">
+      <div class="search-input-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="global-search-input" placeholder="Search by name, category or skin concern (e.g. Serum, Matte, Glow)..." autofocus />
+        <button class="close-search-btn" id="close-search-btn" aria-label="Close search">✕</button>
+      </div>
+      <div class="search-results-area" id="search-results-area">
+        <p class="search-hint">Type to search through our luxury collection...</p>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section" id="hero">
+      <div class="hero-bg-glow"></div>
+      <div class="container hero-container">
+        
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            <span>🌿 [100% Organic & Dermatologist Tested]</span>
+          </div>
+          
+          <h1 class="hero-title">
+            Unveil Your True Radiance With 
+            <span class="title-gradient">[Your Brand Name]</span>
+          </h1>
+          
+          <p class="hero-subtitle">
+            Experience scientifically backed botanical formulations crafted for luminous, youthful skin. Infused with potent botanicals and pure actives designed for every skin tone.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#bestsellers" class="btn btn-primary">
+              <span>Explore [Bestsellers]</span>
+              <svg class="btn-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+              </svg>
+            </a>
+            <a href="#routine-quiz" class="btn btn-outline">
+              <span>Take 60s Skin Quiz ✨</span>
+            </a>
+          </div>
+
+          <!-- Social Proof / Stats in Hero -->
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">[15,000+]</span>
+              <span class="stat-label">Happy Clients</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">[4.9 ★]</span>
+              <span class="stat-label">Rated Excellence</span>
+            </div>
+            <div class="stat-divider"></div>
+            <div class="stat-item">
+              <span class="stat-number">[100%]</span>
+              <span class="stat-label">Vegan & Safe</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-card-glow"></div>
+          <div class="hero-image-wrapper">
+            <img 
+              src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=1200&q=80" 
+              alt="[Your Brand Name] Luxury Cosmetics Collection" 
+              class="hero-img"
+              loading="eager"
+            />
+            
+            <!-- Floating Badge Card 1 -->
+            <div class="floating-badge badge-top-right glass-card">
+              <div class="floating-icon">✨</div>
+              <div class="floating-info">
+                <strong>[Award Winner 2026]</strong>
+                <span>Best Clean Beauty Brand</span>
+              </div>
+            </div>
+
+            <!-- Floating Badge Card 2 -->
+            <div class="floating-badge badge-bottom-left glass-card">
+              <div class="user-avatar-group">
+                <span class="avatar">👩</span>
+                <span class="avatar">👱‍♀️</span>
+                <span class="avatar">👩🏾</span>
+              </div>
+              <div class="floating-info">
+                <div class="rating-stars">★★★★★</div>
+                <span>"Skin glowed in just 5 days!"</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Key Value Pillars -->
+    <section class="pillars-section">
+      <div class="container">
+        <div class="pillars-grid">
+          <div class="pillar-card">
+            <div class="pillar-icon">🌸</div>
+            <div class="pillar-text">
+              <h3>[100% Cruelty Free]</h3>
+              <p>Never tested on animals, certified ethical formulations.</p>
+            </div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">💧</div>
+            <div class="pillar-text">
+              <h3>[Clinically Proven]</h3>
+              <p>Formulated with dermatologist-backed clinical actives.</p>
+            </div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">🌿</div>
+            <div class="pillar-text">
+              <h3>[Clean & Paraben-Free]</h3>
+              <p>Zero toxins, zero sulfates, only pure botanical extracts.</p>
+            </div>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-icon">📦</div>
+            <div class="pillar-text">
+              <h3>[Luxury Eco Packaging]</h3>
+              <p>100% recyclable glass and sustainable elegant packaging.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Category Showcase Section -->
+    <section class="categories-section" id="categories">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">[Curated Collections]</span>
+          <h2 class="section-title">Explore By Beauty Category</h2>
+          <p class="section-desc">Handcrafted beauty essentials tailored to illuminate your unique skin personality.</p>
+        </div>
+
+        <div class="categories-grid">
+          <!-- Category 1 -->
+          <div class="category-card" data-category="skincare">
+            <div class="cat-image-wrap">
+              <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=600&q=80" alt="Skincare" loading="lazy">
+              <div class="cat-overlay"></div>
+            </div>
+            <div class="cat-content">
+              <span class="cat-items-count">[18 Products]</span>
+              <h3 class="cat-title">[Skincare & Serums]</h3>
+              <p class="cat-desc">Nourish, hydrate, and shield with gentle botanical elixirs.</p>
+              <button class="cat-link-btn" onclick="filterByCategory('skincare')">Explore Skincare →</button>
+            </div>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="category-card" data-category="makeup">
+            <div class="cat-image-wrap">
+              <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?auto=format&fit=crop&w=600&q=80" alt="Makeup" loading="lazy">
+              <div class="cat-overlay"></div>
+            </div>
+            <div class="cat-content">
+              <span class="cat-items-count">[24 Products]</span>
+              <h3 class="cat-title">[Luminous Makeup]</h3>
+              <p class="cat-desc">Silky foundations, velvety bronzers, and radiant blushes.</p>
+              <button class="cat-link-btn" onclick="filterByCategory('makeup')">Explore Makeup →</button>
+            </div>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="category-card" data-category="lips">
+            <div class="cat-image-wrap">
+              <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?auto=format&fit=crop&w=600&q=80" alt="Lip Care" loading="lazy">
+              <div class="cat-overlay"></div>
+            </div>
+            <div class="cat-content">
+              <span class="cat-items-count">[12 Products]</span>
+              <h3 class="cat-title">[Velvet Lip Care]</h3>
+              <p class="cat-desc">Hydrating lip balms, long-wear stains, and plush glosses.</p>
+              <button class="cat-link-btn" onclick="filterByCategory('lips')">Explore Lip Care →</button>
+            </div>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="category-card" data-category="fragrance">
+            <div class="cat-image-wrap">
+              <img src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=600&q=80" alt="Fragrance" loading="lazy">
+              <div class="cat-overlay"></div>
+            </div>
+            <div class="cat-content">
+              <span class="cat-items-count">[8 Products]</span>
+              <h3 class="cat-title">[Signature Fragrance]</h3>
+              <p class="cat-desc">Enchanting notes of amber, wild jasmine, and warm sandalwood.</p>
+              <button class="cat-link-btn" onclick="filterByCategory('fragrance')">Explore Fragrance →</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Best Sellers / Product Catalog Section -->
+    <section class="products-section" id="bestsellers">
+      <div class="container">
+        
+        <div class="section-header-row">
+          <div>
+            <span class="section-tag">[Award-Winning Formulations]</span>
+            <h2 class="section-title">Most Loved By [Brand] Customers</h2>
+          </div>
+          
+          <!-- Category Filter Tabs -->
+          <div class="filter-tabs-wrapper">
+            <div class="filter-tabs" id="category-filter-tabs">
+              <button class="filter-tab active" data-filter="all">All Items</button>
+              <button class="filter-tab" data-filter="skincare">Skincare</button>
+              <button class="filter-tab" data-filter="makeup">Makeup</button>
+              <button class="filter-tab" data-filter="lips">Lip Care</button>
+              <button class="filter-tab" data-filter="fragrance">Fragrance</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product Grid (Populated dynamically via app.js) -->
+        <div class="products-grid" id="products-grid">
+          <!-- JS will render products here with animated cards -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Interactive Skin Routine Quiz Section -->
+    <section class="quiz-section" id="routine-quiz">
+      <div class="container">
+        <div class="quiz-card glass-card">
+          <div class="quiz-badge">✨ [Interactive Glow Consultant]</div>
+          <h2 class="quiz-title">Find Your Personalized 3-Step Beauty Routine</h2>
+          <p class="quiz-subtitle">Answer 3 simple questions and our skin-match algorithm will craft your ideal morning & night ritual.</p>
+
+          <div class="quiz-progress-bar">
+            <div class="quiz-progress-fill" id="quiz-progress-fill"></div>
+          </div>
+
+          <div class="quiz-container" id="quiz-container">
+            <!-- Step 1 -->
+            <div class="quiz-step active" id="quiz-step-1">
+              <h3 class="step-question">Step 1: What is your primary skin type?</h3>
+              <div class="quiz-options-grid">
+                <button class="quiz-option" data-step="1" data-value="dry">
+                  <span class="opt-icon">🏜️</span>
+                  <strong>Dry / Dehydrated</strong>
+                  <span class="opt-sub">Feels tight, needs intensive moisture</span>
+                </button>
+                <button class="quiz-option" data-step="1" data-value="oily">
+                  <span class="opt-icon">✨</span>
+                  <strong>Oily / Acne Prone</strong>
+                  <span class="opt-sub">Shiny T-zone, enlarged pores</span>
+                </button>
+                <button class="quiz-option" data-step="1" data-value="combination">
+                  <span class="opt-icon">⚖️</span>
+                  <strong>Combination</strong>
+                  <span class="opt-sub">Oily forehead/nose, normal cheeks</span>
+                </button>
+                <button class="quiz-option" data-step="1" data-value="sensitive">
+                  <span class="opt-icon">🌸</span>
+                  <strong>Sensitive</strong>
+                  <span class="opt-sub">Prone to redness, easily irritated</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="quiz-step" id="quiz-step-2">
+              <h3 class="step-question">Step 2: What is your #1 skincare goal?</h3>
+              <div class="quiz-options-grid">
+                <button class="quiz-option" data-step="2" data-value="glow">
+                  <span class="opt-icon">🌟</span>
+                  <strong>Maximum Dewy Glow</strong>
+                  <span class="opt-sub">Brighten dullness & boost glass skin</span>
+                </button>
+                <button class="quiz-option" data-step="2" data-value="antiaging">
+                  <span class="opt-icon">⏳</span>
+                  <strong>Anti-Aging & Firming</strong>
+                  <span class="opt-sub">Smooth fine lines, boost collagen</span>
+                </button>
+                <button class="quiz-option" data-step="2" data-value="hydration">
+                  <span class="opt-icon">💧</span>
+                  <strong>Deep Moisture Barrier</strong>
+                  <span class="opt-sub">Plump skin with multi-weight hyaluronic acid</span>
+                </button>
+                <button class="quiz-option" data-step="2" data-value="blemish">
+                  <span class="opt-icon">🌿</span>
+                  <strong>Clear & Calm Pores</strong>
+                  <span class="opt-sub">Reduce redness and smooth uneven texture</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="quiz-step" id="quiz-step-3">
+              <h3 class="step-question">Step 3: What texture finish do you prefer?</h3>
+              <div class="quiz-options-grid">
+                <button class="quiz-option" data-step="3" data-value="lightweight">
+                  <span class="opt-icon">🪶</span>
+                  <strong>Weightless Water Gel</strong>
+                  <span class="opt-sub">Fast absorbing, zero greasy residue</span>
+                </button>
+                <button class="quiz-option" data-step="3" data-value="velvet">
+                  <span class="opt-icon">☁️</span>
+                  <strong>Silky Velvet Cream</strong>
+                  <span class="opt-sub">Rich comforting barrier protection</span>
+                </button>
+                <button class="quiz-option" data-step="3" data-value="dewy">
+                  <span class="opt-icon">✨</span>
+                  <strong>Glossy Radiant Drops</strong>
+                  <span class="opt-sub">High-luminosity healthy sheen</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz Result Box -->
+            <div class="quiz-result-box" id="quiz-result-box" style="display: none;">
+              <div class="result-celebration">🎉</div>
+              <h3 class="result-heading">Your Custom [Brand] Ritual Is Ready!</h3>
+              <p class="result-description" id="result-description">Based on your selections, our dermatologists recommend this synergistic 3-step routine:</p>
+              
+              <div class="recommended-products-list" id="recommended-products-list">
+                <!-- Dynamically populated -->
+              </div>
+
+              <div class="result-actions">
+                <button class="btn btn-primary" id="add-routine-bundle-btn">
+                  <span>Add Recommended Routine (Save 15%)</span>
+                </button>
+                <button class="btn btn-outline" id="retake-quiz-btn">Retake Quiz</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Natural Active Ingredients Spotlight -->
+    <section class="ingredients-section" id="ingredients">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">[Clean Chemistry & Nature]</span>
+          <h2 class="section-title">The Science Behind Your Glow</h2>
+          <p class="section-desc">We combine rare botanical extracts with clinically validated cosmetic biotechnology.</p>
+        </div>
+
+        <div class="ingredients-grid">
+          <div class="ingredient-card">
+            <div class="ing-badge">Active 01</div>
+            <h3 class="ing-name">[Botanical Rosehip & Bakuchiol]</h3>
+            <p class="ing-role">Natural Retinol Alternative</p>
+            <p class="ing-desc">Stimulates cellular renewal and smooths fine texture without the redness or sensitivity of traditional synthetic retinoids.</p>
+            <div class="ing-purity">99.4% Botanical Purity</div>
+          </div>
+
+          <div class="ingredient-card">
+            <div class="ing-badge">Active 02</div>
+            <h3 class="ing-name">[Triple-Weight Hyaluronic Acid]</h3>
+            <p class="ing-role">Deep Cellular Hydration</p>
+            <p class="ing-desc">Penetrates deep into the dermal matrix, binding up to 1000x its weight in water for instant 24-hour plumpness.</p>
+            <div class="ing-purity">Multi-Molecular Complex</div>
+          </div>
+
+          <div class="ingredient-card">
+            <div class="ing-badge">Active 03</div>
+            <h3 class="ing-name">[Fermented Niacinamide 5%]</h3>
+            <p class="ing-role">Pore Refining & Radiance</p>
+            <p class="ing-desc">Clinically proven to minimize appearance of pores, balance sebum production, and visibly fade stubborn hyperpigmentation.</p>
+            <div class="ing-purity">Pharmaceutical Grade</div>
+          </div>
+
+          <div class="ingredient-card">
+            <div class="ing-badge">Active 04</div>
+            <h3 class="ing-name">[Centella Asiatica (Cica)]</h3>
+            <p class="ing-role">Barrier Repair & Soothing</p>
+            <p class="ing-desc">Calms skin flare-ups, fortifies compromised moisture barriers, and delivers an immediate cooling sensation.</p>
+            <div class="ing-purity">Organic Farm Harvested</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials / Customer Reviews -->
+    <section class="reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">[Real Verified Results]</span>
+          <h2 class="section-title">What Our Glowing Clients Say</h2>
+          <p class="section-desc">Join over 15,000+ satisfied beauty enthusiasts across the globe.</p>
+        </div>
+
+        <div class="reviews-grid">
+          <!-- Review 1 -->
+          <div class="review-card glass-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">"I was skeptical about clean cosmetics, but <strong>[Your Brand Name]</strong>'s serum completely transformed my dull dry patches. My skin has never felt this soft and radiant!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">🌸</div>
+              <div class="reviewer-details">
+                <span class="reviewer-name">[Customer Name: Priya S.]</span>
+                <span class="reviewer-verified">✓ Verified Buyer • Mumbai</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="review-card glass-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">"The <strong>[Velvet Matte Lipstick]</strong> doesn't dry my lips at all! It stayed intact through lunch and dinner. Hands down the highest quality makeup in my kit."</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">💄</div>
+              <div class="reviewer-details">
+                <span class="reviewer-name">[Customer Name: Elena R.]</span>
+                <span class="reviewer-verified">✓ Verified Buyer • New York</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="review-card glass-card">
+            <div class="review-stars">★★★★★</div>
+            <p class="review-quote">"The 3-step quiz matched me with the exact products my sensitive skin needed. Zero irritation and instant compliments from my friends at work!"</p>
+            <div class="reviewer-meta">
+              <div class="reviewer-avatar">✨</div>
+              <div class="reviewer-details">
+                <span class="reviewer-name">[Customer Name: Ananya M.]</span>
+                <span class="reviewer-verified">✓ Verified Buyer • Bengaluru</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community / Instagram Grid -->
+    <section class="instagram-section">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-tag">[Join The Community]</span>
+          <h2 class="section-title">Follow Us @[YourBrandHandle]</h2>
+          <p class="section-desc">Tag <strong>#[YourBrandGlow]</strong> on Instagram to be featured on our official wall.</p>
+        </div>
+
+        <div class="insta-gallery-grid">
+          <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=400&q=80" alt="Cosmetics look" loading="lazy">
+            <div class="insta-hover-overlay"><span>@[YourBrandHandle]</span></div>
+          </div>
+          <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=400&q=80" alt="Cream jar aesthetic" loading="lazy">
+            <div class="insta-hover-overlay"><span>@[YourBrandHandle]</span></div>
+          </div>
+          <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?auto=format&fit=crop&w=400&q=80" alt="Foundation drops" loading="lazy">
+            <div class="insta-hover-overlay"><span>@[YourBrandHandle]</span></div>
+          </div>
+          <div class="insta-item">
+            <img src="https://images.unsplash.com/photo-1608248597359-00f72365eb5c?auto=format&fit=crop&w=400&q=80" alt="Botanical hair oil" loading="lazy">
+            <div class="insta-hover-overlay"><span>@[YourBrandHandle]</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Us / Brand Philosophy -->
+    <section class="about-section" id="about">
+      <div class="container about-container">
+        <div class="about-image-col">
+          <div class="about-image-card">
+            <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=800&q=80" alt="[Your Brand Name] Philosophy" loading="lazy">
+            <div class="about-badge glass-card">
+              <span>🌿 Clean Chemistry Since 2022</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-content-col">
+          <span class="section-tag">[Our Story & Vision]</span>
+          <h2 class="section-title">Redefining Beauty With Clean Luxury</h2>
+          <p class="about-text">
+            <strong>[Your Brand Name]</strong> was founded on a simple philosophy: beauty rituals should celebrate and enhance your natural skin rather than masking it under heavy chemicals.
+          </p>
+          <p class="about-text">
+            Every bottle, jar, and compact is sustainably crafted using wild-harvested botanicals and dermatologically certified ingredients. We take pride in transparent formulas with zero artificial dyes, mineral oils, or synthetic fragrances.
+          </p>
+          <div class="about-features">
+            <div class="af-item">
+              <span class="af-check">✓</span>
+              <span>Dermatologist Formulated & Allergy Tested</span>
+            </div>
+            <div class="af-item">
+              <span class="af-check">✓</span>
+              <span>100% Recyclable Luxury Glass Containers</span>
+            </div>
+            <div class="af-item">
+              <span class="af-check">✓</span>
+              <span>Fair-Trade Botanical Ingredient Sourcing</span>
+            </div>
+          </div>
+          <div class="about-signature">
+            <span class="sig-name">[Founder / Creative Director Name]</span>
+            <span class="sig-title">Founder of [Your Brand Name]</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter VIP Section -->
+    <section class="newsletter-section">
+      <div class="container">
+        <div class="newsletter-box glass-card">
+          <div class="news-content">
+            <span class="news-pill">🎁 [Exclusive VIP Offer]</span>
+            <h2 class="news-title">Receive 15% Off Your First Order</h2>
+            <p class="news-desc">Subscribe to the <strong>[Brand VIP Club]</strong> for private access to limited releases, skincare advice, and member-only gifts.</p>
+            
+            <form class="news-form" id="newsletter-form">
+              <input type="email" id="newsletter-email" placeholder="Enter your email address..." required>
+              <button type="submit" class="btn btn-primary">
+                <span>Unlock 15% OFF</span>
+              </button>
+            </form>
+            <p class="news-disclaimer">No spam, ever. Unsubscribe anytime with 1-click.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Store & Contact Information -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-grid">
+          
+          <div class="contact-info-col">
+            <span class="section-tag">[Visit Our Boutique / Get In Touch]</span>
+            <h2 class="section-title">We'd Love To Hear From You</h2>
+            <p class="contact-sub">Have questions regarding product ingredients, custom shade matching, or store visits? Our beauty concierge team is here for you.</p>
+
+            <div class="contact-cards-list">
+              <div class="contact-detail-card">
+                <div class="c-icon">📍</div>
+                <div>
+                  <strong>Store Boutique Location</strong>
+                  <p>[123 Luxury Beauty Boulevard, Suite 400, Mumbai / New York / London]</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="c-icon">📞</div>
+                <div>
+                  <strong>Phone / WhatsApp Concierge</strong>
+                  <p>[+91 98765 43210 / +1 (800) 555-GLOW]</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="c-icon">✉️</div>
+                <div>
+                  <strong>Email Support</strong>
+                  <p>[support@yourbrand.com / orders@yourshop.com]</p>
+                </div>
+              </div>
+
+              <div class="contact-detail-card">
+                <div class="c-icon">⏰</div>
+                <div>
+                  <strong>Boutique Store Hours</strong>
+                  <p>[Monday - Saturday: 10:00 AM - 9:00 PM | Sunday: 11:00 AM - 7:00 PM]</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-col">
+            <div class="form-wrapper glass-card">
+              <h3>Send A Direct Message</h3>
+              <p>Our skincare advisors reply within 2 hours.</p>
+              
+              <form id="contact-form">
+                <div class="form-group">
+                  <label for="contact-name">Full Name</label>
+                  <input type="text" id="contact-name" placeholder="[Your Name]" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-email">Email Address</label>
+                  <input type="email" id="contact-email" placeholder="[name@example.com]" required>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-subject">Topic / Concern</label>
+                  <select id="contact-subject">
+                    <option value="skin-advice">[Skincare Advice / Shade Match]</option>
+                    <option value="order-status">[Order Inquiry]</option>
+                    <option value="wholesale">[Wholesale / Salon Inquiries]</option>
+                    <option value="feedback">[General Feedback]</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label for="contact-msg">Message</label>
+                  <textarea id="contact-msg" rows="4" placeholder="How can we help you glow today?" required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                  <span>Send Message to [Your Brand]</span>
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Luxury Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      
+      <div class="footer-col brand-col">
+        <a href="#" class="brand-logo footer-logo">
+          <span class="logo-symbol">✧</span>
+          <div class="logo-text-group">
+            <span class="logo-main">[YOUR BRAND]</span>
+            <span class="logo-sub">L U X U R Y &nbsp; C O S M E T I C S</span>
+          </div>
+        </a>
+        <p class="footer-desc">
+          Crafted with pure organic botanicals, dermatologist expertise, and uncompromising luxury for radiant confidence.
+        </p>
+        <div class="social-links">
+          <a href="#" class="social-btn" aria-label="Instagram">📸</a>
+          <a href="#" class="social-btn" aria-label="Facebook">📘</a>
+          <a href="#" class="social-btn" aria-label="Pinterest">📌</a>
+          <a href="#" class="social-btn" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Shop Collections</h4>
+        <ul class="footer-links">
+          <li><a href="#bestsellers">[All Bestsellers]</a></li>
+          <li><a href="#categories">[Hydrating Skincare]</a></li>
+          <li><a href="#categories">[Luminous Foundations]</a></li>
+          <li><a href="#categories">[Velvet Matte Lipsticks]</a></li>
+          <li><a href="#categories">[Botanical Fragrances]</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Customer Care</h4>
+        <ul class="footer-links">
+          <li><a href="#contact">[Track My Order]</a></li>
+          <li><a href="#contact">[Shipping & Returns Policy]</a></li>
+          <li><a href="#routine-quiz">[Skin Type Diagnosis]</a></li>
+          <li><a href="#contact">[Store Locator & Timings]</a></li>
+          <li><a href="#contact">[FAQs & Ingredients Guide]</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Guarantee</h4>
+        <div class="footer-badges">
+          <div class="f-badge">🐰 Cruelty-Free Certified</div>
+          <div class="f-badge">🌱 100% Vegan Ingredients</div>
+          <div class="f-badge">🔒 256-Bit Secure Checkout</div>
+          <div class="f-badge">🔄 30-Day Money-Back Guarantee</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container bottom-inner">
+        <p>© 2026 <strong>[Your Brand Name]</strong> Cosmetics. All Rights Reserved. Crafted for elegance.</p>
+        <div class="payment-methods">
+          <span class="pay-tag">Visa</span>
+          <span class="pay-tag">Mastercard</span>
+          <span class="pay-tag">UPI</span>
+          <span class="pay-tag">Apple Pay</span>
+          <span class="pay-tag">PayPal</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Quick View Product Modal -->
+  <div class="modal-overlay" id="quick-view-modal" aria-hidden="true">
+    <div class="modal-container">
+      <button class="modal-close-btn" id="close-modal-btn" aria-label="Close product preview">✕</button>
+      <div class="modal-body" id="modal-content">
+        <!-- Rendered dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide-out Shopping Cart Drawer -->
+  <aside class="cart-drawer" id="cart-drawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <div class="drawer-title-group">
+        <h3>Your Shopping Bag</h3>
+        <span class="drawer-count" id="cart-item-count-text">0 items</span>
+      </div>
+      <button class="close-cart-btn" id="close-cart-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <!-- Free Shipping Progress -->
+    <div class="shipping-progress-wrap">
+      <div class="shipping-info-text" id="shipping-progress-text">
+        Add [₹400 / $15] more for <strong>FREE Luxury Shipping</strong> 🎁
+      </div>
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" id="shipping-progress-fill" style="width: 45%;"></div>
+      </div>
+    </div>
+
+    <!-- Cart Items Scroll List -->
+    <div class="cart-items-list" id="cart-items-container">
+      <!-- Populated dynamically via JS -->
+    </div>
+
+    <!-- Cart Footer & Checkout -->
+    <div class="cart-drawer-footer">
+      <div class="promo-box">
+        <input type="text" id="promo-code-input" placeholder="Promo code (e.g. GLOW20)" />
+        <button id="apply-promo-btn">Apply</button>
+      </div>
+      <div id="promo-message" class="promo-msg"></div>
+
+      <div class="cart-summary-breakdown">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="cart-subtotal-val">₹ 0</span>
+        </div>
+        <div class="summary-line discount-line" id="discount-row" style="display: none;">
+          <span>Discount ([GLOW20])</span>
+          <span id="cart-discount-val">- ₹ 0</span>
+        </div>
+        <div class="summary-line">
+          <span>Shipping</span>
+          <span id="cart-shipping-val">Calculated at checkout</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Total</span>
+          <span id="cart-total-val">₹ 0</span>
+        </div>
+      </div>
+
+      <button class="btn btn-primary btn-block checkout-btn" id="checkout-btn">
+        <span>Proceed to Secure Checkout</span>
+      </button>
+
+      <div class="secure-checkout-hint">
+        🔒 256-Bit SSL Encrypted • 30-Day Money-Back Guarantee
+      </div>
+    </div>
+  </aside>
+  <div class="cart-backdrop" id="cart-backdrop"></div>
+
+  <!-- Mobile Floating Bottom Action Bar (Mobile Friendly UX) -->
+  <nav class="mobile-bottom-bar" aria-label="Mobile Navigation">
+    <a href="#hero" class="m-bar-btn active">
+      <span class="m-icon">🏠</span>
+      <span class="m-label">Home</span>
+    </a>
+    <a href="#categories" class="m-bar-btn">
+      <span class="m-icon">💄</span>
+      <span class="m-label">Shop</span>
+    </a>
+    <button class="m-bar-btn" id="m-search-trigger">
+      <span class="m-icon">🔍</span>
+      <span class="m-label">Search</span>
+    </button>
+    <button class="m-bar-btn" id="m-wishlist-trigger">
+      <span class="m-icon">❤️</span>
+      <span class="m-label">Wishlist</span>
+      <span class="m-badge" id="m-wishlist-count">0</span>
+    </button>
+    <button class="m-bar-btn m-cart-trigger" id="m-cart-trigger">
+      <span class="m-icon">🛍️</span>
+      <span class="m-label">Bag</span>
+      <span class="m-badge" id="m-cart-count">0</span>
+    </button>
+  </nav>
+
+  <!-- Simulated Checkout Success Modal -->
+  <div class="modal-overlay" id="checkout-modal" aria-hidden="true">
+    <div class="modal-container checkout-success-box text-center">
+      <div class="success-icon-wrap">🎉</div>
+      <h2>Order Placed Successfully!</h2>
+      <p class="order-id">Order ID: <strong>#[ORD-2026-GLOW892]</strong></p>
+      <p class="order-details">Thank you for shopping with <strong>[Your Brand Name]</strong>! A confirmation email and tracking link have been dispatched to your email address.</p>
+      <div class="order-summary-box">
+        <p>Estimated Delivery: <strong>[2 - 4 Business Days]</strong></p>
+        <p>Payment: <strong>[Prepaid / Cash on Delivery Verified]</strong></p>
+      </div>
+      <button class="btn btn-primary" id="continue-shopping-btn">Continue Shopping</button>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Main JavaScript Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
